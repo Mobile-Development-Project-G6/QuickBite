@@ -1,17 +1,30 @@
-import React from 'react';
-import { StyleSheet, View} from "react-native";
+import React, {useEffect, useState} from 'react';
+import {Pressable, StyleSheet, View} from "react-native";
 import {Button, Icon, Text} from "@rneui/themed";
+import {storage} from "../screens/AppComponent";
+import {Item} from "../models/Restraunt";
 
-const CartComponent = () => {
+const CartComponent = (props) => {
+
+    const [sum, setSum] = React.useState(0.0);
+
+    useEffect(() => {
+        let localSum = 0;
+        props.cart.forEach(el => {
+            localSum += el.selectedConfig.price * el.quantity
+        })
+        setSum(localSum)
+    }, [props.cart])
+
     return (
-            <Button buttonStyle={styles.button} containerStyle={styles.buttonContainer}>
-                <View style={styles.cartBox}>
-                    <Icon type='font-awesome' name="opencart" color="white" style={styles.cartButton}/>
-                    <View style={styles.cartItems}><Text style={{color: 'white'}}>2</Text></View>
-                </View>
-                <Text style={styles.cartText}>CART</Text>
-                <Text style={styles.currency}>GBP 33</Text>
-            </Button>
+        <Button buttonStyle={styles.button} containerStyle={styles.buttonContainer} onPress={() => props.setCartInStorageAndNavigateToCartScreen()}>
+            <View style={styles.cartBox}>
+                <Icon type='font-awesome' name="opencart" color="white" style={styles.cartButton}/>
+                <View style={styles.cartItems}><Text style={{color: 'white'}}>{props.cart.length}</Text></View>
+            </View>
+            <Text style={styles.cartText}>CART</Text>
+            <Text style={styles.currency}>₹ {sum}</Text>
+        </Button>
     );
 };
 
@@ -23,11 +36,11 @@ const styles = StyleSheet.create({
     button: {
         height: 60,
         borderRadius: 10,
-        justifyContent: "space-between"
+        justifyContent: "space-between",
     },
     buttonContainer: {
         marginHorizontal: 10,
-        marginVertical: 5
+        marginVertical: 5,
     },
     cartButton:{
         alignSelf: 'flex-start'
