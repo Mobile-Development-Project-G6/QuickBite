@@ -10,7 +10,7 @@ import { emailValidator } from '../helpers/emailValidator'
 export default function ResetPasswordScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
 
-  const  sendResetPasswordEmail = () => {
+  const sendResetPasswordEmail = () => {
     const emailError = emailValidator(email.value)
     if (emailError) {
       setEmail({ ...email, error: emailError })
