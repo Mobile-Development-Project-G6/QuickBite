@@ -6,13 +6,15 @@
  */
 
 import React from 'react';
-import AppComponent from "./src/screens/AppComponent";
+import AppComponent, { storage } from "./src/screens/AppComponent";
 
 function App(): JSX.Element {
 
   return (
       <AppComponent></AppComponent>
   );
+
 }
+
 
 export default App;
