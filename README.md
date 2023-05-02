@@ -88,9 +88,13 @@ git clone [insert project repository URL]
 
 Step two: npm i
 
-Step three: "npx react-native start" (This command is for bundler metro run)
+step four: in config file you need to add your own IP address.
 
-Step four: open new terminal and run "npx react-native run android" 
+Step five: "npx react-native start" (This command is for bundler metro run)
+
+Step Six: open new terminal and run "npx react-native run android" 
+
+Run the backend and front end code at the same time in separate Visual studio code windows.
 
 **Note**
 
