@@ -27,7 +27,7 @@ Our app is designed for Food Dine-in and pick-up. Our app offers a range of feat
 
 **Technologies used in the project**
 
-Programming lauguage: Typescript and JavaScripts
+Programming languages: Typescript and JavaScript
 
 Database:MongoDb
 
