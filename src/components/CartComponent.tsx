@@ -23,7 +23,7 @@ const CartComponent = (props) => {
                 <View style={styles.cartItems}><Text style={{color: 'white'}}>{props.cart.length}</Text></View>
             </View>
             <Text style={styles.cartText}>CART</Text>
-            <Text style={styles.currency}>₹ {sum}</Text>
+            <Text style={styles.currency}>€ {sum}</Text>
         </Button>
     );
 };

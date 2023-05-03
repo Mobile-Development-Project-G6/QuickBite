@@ -25,7 +25,7 @@ const ItemViewerScreen = ({route, navigation}) => {
                 />
                 <Text style={styles.heading}>{route.params.item.name}</Text>
                 <Text style={styles.text}>{route.params.item.description}</Text>
-                <Text style={styles.text}>₹ {selConfig ? selConfig.price : route.params.item.price}</Text>
+                <Text style={styles.text}>€ {selConfig ? selConfig.price : route.params.item.price}</Text>
                 <View style={styles.config}>
                     {
                         route.params.item.config.map((config:Config, key: number) => {
@@ -38,7 +38,7 @@ const ItemViewerScreen = ({route, navigation}) => {
                                                 key={key}
                                         />
                                         <Text style={styles.configText}>{config.name}</Text>
-                                        <Text style={styles.configText}>₹ {config.price}</Text>
+                                        <Text style={styles.configText}>€{config.price}</Text>
                                     </View>
                         })
                     }

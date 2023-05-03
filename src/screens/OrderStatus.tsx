@@ -119,7 +119,7 @@ const OrderStatus = ({ route, navigation }) => {
                                 <Text style={styles.icontext}> {item.selectedConfig?.name}</Text>
                                 <Text style={styles.icontext}>x{item.quantity}</Text>
                             </View>
-                            <Text style={styles.icontext}>₹ {item.selectedConfig?.price}</Text>
+                            <Text style={styles.icontext}>€ {item.selectedConfig?.price}</Text>
                         </View>
                         <View style={styles.innerView2}>
                             <Image

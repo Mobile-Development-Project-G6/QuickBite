@@ -15,7 +15,7 @@ const BestSellerItemComponent = (props) => {
                     />
                 </View>
                 <Text style={styles.heading} ellipsizeMode='tail' numberOfLines={1}>{props.item.name}</Text>
-                <Text style={styles.text}>₹ {props.item.price}</Text>
+                <Text style={styles.text}>€ {props.item.price}</Text>
             </Card>
         </Pressable>
     );

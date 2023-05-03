@@ -7,7 +7,7 @@ const ItemComponent = (props) => {
         <Card containerStyle={styles.card} wrapperStyle={styles.cardWrapper}>
             <View style={styles.innerView1}>
                 <Text style={styles.heading}>{props.item.name}</Text>
-                <Text style={styles.text}>₹ {props.item.price}</Text>
+                <Text style={styles.text}>€ {props.item.price}</Text>
                 <Button title="VIEW" buttonStyle={styles.button} onPress={() => props.sendDataToParent(props.item)}></Button>
             </View>
             <View style={styles.innerView2}>

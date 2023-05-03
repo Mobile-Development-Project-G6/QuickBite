@@ -53,7 +53,7 @@ const CartScreen = ({ route, navigation}) => {
                     </View>
                     <View style={{flexDirection: "row", paddingLeft: 20,}}>
                         <Icon type="font-awesome-5" name="money-bill" style={styles.icon}/>
-                        <Text style={styles.icontext}>₹ {item.selectedConfig?.price}</Text>
+                        <Text style={styles.icontext}>€ {item.selectedConfig?.price}</Text>
                     </View>
                     <View style={{flexDirection: "row", paddingLeft: 20,}}>
                         <Icon type="octicon" name="number" style={styles.icon}/>
