@@ -104,7 +104,7 @@ const OrderScreen = ({route, navigation}) => {
     const getTotal = () => {
         return <View style={styles.total}>
             <Text style={{ color: "#000",fontSize: 24,fontWeight: "bold",textTransform: "capitalize"}}>Total</Text>
-            <Text style={{ color: "#000",fontSize: 24,fontWeight: "bold",textTransform: "uppercase"}}>INR {sum}</Text>
+            <Text style={{ color: "#000",fontSize: 24,fontWeight: "bold",textTransform: "uppercase"}}>EUR {sum}</Text>
         </View>
     };
 

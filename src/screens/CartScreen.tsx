@@ -89,7 +89,7 @@ const CartScreen = ({ route, navigation}) => {
                     listItems.length > 0 ?
                         <Button buttonStyle={styles.buttonLarge} containerStyle={styles.buttonContainer} onPress={() => route.params.gotToOrderScreen()}>
                             <Icon type='evil-icon' name="check" color="white"/>
-                            <Text style={styles.conText}>Continue Order for INR {sum}</Text>
+                            <Text style={styles.conText}>Continue Order for EUR{sum}</Text>
                         </Button> :
                         <Button buttonStyle={styles.buttonLarge} containerStyle={styles.buttonContainer} onPress={() => {navigation.navigate('home', {})}}>
                             <Icon type='ionicon' name="arrow-back" color="white"/>
