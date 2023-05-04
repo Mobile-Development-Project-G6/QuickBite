@@ -5,9 +5,8 @@ import {storage} from "../screens/AppComponent";
 import {User} from "../models/Restraunt";
 import {useInterval} from "usehooks-ts";
 
-const HeaderComponent = (props: any) => {
+const HeaderComponent = ({navigation}) => {
     const [isLoggedIN, setIsLoggedIN] = useState(false);
-    // @ts-ignore
     const [user, setUser] = useState<User>(null);
 
     useInterval(
@@ -24,7 +23,6 @@ const HeaderComponent = (props: any) => {
                 if(userD){
                     setUser(JSON.parse(userD!)[0])
                 }else{
-                    // @ts-ignore
                     setUser(null)
                 }
             }catch(e){
@@ -32,18 +30,19 @@ const HeaderComponent = (props: any) => {
             }
         },
         // Delay in milliseconds or null to stop it
-        1000
+        3000
     )
 
     return (
         <View style={styles.view}>
-            <View style={styles.leftView}>{
-                !isLoggedIN ?
-                    <Button type="solid" style={styles.loginButton}  buttonStyle={{ backgroundColor: 'rgba(37, 211, 102, 1)', borderRadius: 8 }} onPress={() => {props.goToLoginScreen()}}>
-                        <Icon name="logo-whatsapp" type='ionicon' color="white" />
-                        <Text style={{color: "white"}}>  LOGIN</Text>
-                    </Button> :
-                    <View style={{flexDirection: "column"}}><Text style={{color: 'black', fontWeight: "bold", fontSize: 20 }}>Hi! {user?.firstName} {user?.lastName}</Text><Text>{user?.email}</Text></View>
+            <View style={styles.leftView}>
+            {/*<Button type="outline" style={styles.hamburgerButton} buttonStyle={{ borderRadius : 60, borderWidth: 1, marginRight: 10 }}>*/}
+            {/*    <Icon name="menu" />*/}
+            {/*</Button>*/}{
+                !isLoggedIN ?             <Button type="solid" style={styles.loginButton}  buttonStyle={{ backgroundColor: 'rgba(37, 211, 102, 1)', borderRadius: 8 }} onPress={() => {navigation.navigate('login', {fromOrder : false})}}>
+                    <Icon name="logo-whatsapp" type='ionicon' color="white" />
+                    <Text style={{color: "white"}}>  LOGIN</Text>
+                </Button> : <View style={{flexDirection: "column"}}><Text style={{color: 'black', fontWeight: "bold", fontSize: 20 }}>Hi! {user?.firstName} {user?.lastName}</Text><Text>{user?.email}</Text></View>
             }
             </View>
             <Image source={require('../assets/images/logo.png' )} style={styles.image} PlaceholderContent={<ActivityIndicator />}>
