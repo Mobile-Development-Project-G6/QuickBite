@@ -6,6 +6,8 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>QuickBite</string>
+	<key>NSCameraUsageDescription</key>
+	<string>App will access the camera</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -27,8 +29,6 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
-		<key>NSCameraUsageDescription</key>
-		<string>App will access the camera</string>
 		<dict>
 			<key>localhost</key>
 			<dict>
