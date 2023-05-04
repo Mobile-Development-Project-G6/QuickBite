@@ -27,6 +27,8 @@
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
+		<key>NSCameraUsageDescription</key>
+		<string>App will access the camera</string>
 		<dict>
 			<key>localhost</key>
 			<dict>
